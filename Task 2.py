@@ -7,22 +7,25 @@
 # Он называет сумму этих чисел S и их 
 # произведение P. Помогите Кате отгадать
 # задуманные Петей числа.
-x=0
-y=0
+x = int
+y = int
 
 sum = int(input('Введите сумму: '))
 prois = int(input('Введите произведение: '))
 
-sum = x+y
-prois = x*y
-d = sum*sum - 4*prois
-
-y1 = (-sum+d**(0.5))/2
-y2 = (-sum-d**(0.5))/2
-
-x1 = sum -y1
-x2 = sum -y2
-
-if x1+y1 == sum and x1*y1 ==prois:
+#sum = x+y
+#prois = x*y
+d = float(sum*sum - 4*prois)
+if d==0:
+    y1 = (sum/2)
+    x1 =sum -y1
     print(x1, y1)
-else: print(x2, y2)    
+else:    
+    y1 = (sum+d**(0.5))/2
+    y2 = (sum-d**(0.5))/2
+    x1 = sum - y1
+    x2 = sum - y2
+
+    if x1+y1 == sum and x1*y1 ==prois:
+        print(x1, y1)
+    else: print(x2, y2)    
