@@ -7,3 +7,18 @@
 # количество монет, которые нужно перевернуть
 
 n = int(input('Введите кол-во монеток: '))
+position = input('Введите положение монет на столе(в ряд без пробелов): ')
+countZero = 0
+countOne = 0
+
+for i in range(0,n):
+    if int(position[i]) == 1:
+        countOne+=1
+    else: countZero +=1
+
+if countZero > countOne:
+    print(f'{countOne} монет надо перевернуть')
+else: print(f'{countZero} монет надо перевернуть')            
+
+
+
